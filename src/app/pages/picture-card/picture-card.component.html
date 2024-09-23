@@ -1,0 +1,32 @@
+<mat-card class="example-card w-[300px]" appearance="outlined">
+  <mat-card-header class="bg-neutral-500">
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title class="text-black">{{picture.user.fullName}}</mat-card-title>
+    <mat-card-subtitle>{{picture.title}}</mat-card-subtitle>
+  </mat-card-header>
+  <img class="max-h-[400px] object-cover" mat-card-image
+    [src]="picture.image" alt="Photo of a Shiba Inu">
+  <mat-card-content class="bg-neutral-600">
+    <p>
+      {{picture.description}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="bg-neutral-600 flex justify-between">
+    <div>
+      <!-- <button mat-icon-button aria-label="Example icon button with a home icon">
+        <mat-icon>favorite</mat-icon>
+      </button> -->
+      <button (click)="handleOpenEditPictureForm()" mat-icon-button aria-label="Example icon button with a home icon">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <!-- <button mat-icon-button aria-label="Example icon button with a home icon">
+        <mat-icon>share</mat-icon>
+      </button> -->
+    </div>
+    <div>
+      <button (click)="handleDeletePicture()" mat-icon-button aria-label="Example icon button with a home icon">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>

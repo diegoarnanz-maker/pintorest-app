@@ -1,0 +1,55 @@
+<h1 class="text-center p-5 m-0 bg-neutral-900 custom-h1">Edita tu publicación: {{picture.id}}</h1>
+<form (ngSubmit)="onsubmit()" class="w-[27rem] p-6 shadow-md bg-neutral-500">
+    <div class="mb-4">
+        <mat-form-field class="w-full">
+            <mat-label class="text-neutral-800">Título</mat-label>
+            <input matInput 
+            placeholder="título de la publicación..." 
+            value="pictureItem.title"
+            name="título"
+            [(ngModel)]="pictureItem.title"
+            class="py-2 px-3 text-gray-200 mt-1 bg-neutral-500 border-none focus:outline-none">
+        </mat-form-field>
+    </div>
+
+    <div class="mb-4">
+        <mat-form-field class="w-full">
+            <mat-label class="text-neutral-800">Descripción</mat-label>
+            <input matInput 
+            placeholder="añade una descripción..." 
+            value="pictureItem.description"
+            name="descripción"
+            [(ngModel)]="pictureItem.description"
+            class="py-2 px-3 text-gray-200 mt-1 bg-neutral-500 border-none focus:outline-none">
+        </mat-form-field>
+    </div>
+
+    <div class="mb-4">
+        <mat-radio-group 
+        name="isFree" 
+        value="pictureItem.isfree"
+        [(ngModel)]="pictureItem.isfree" 
+        aria-label="Select an option">
+            <mat-radio-button value="1" color="primary">Opensource</mat-radio-button>
+            <mat-radio-button value="2" color="primary">Proprietary </mat-radio-button>
+          </mat-radio-group>
+    </div>
+
+    <div class="mb-4">
+        <mat-form-field class="w-full">
+            <mat-label class="text-neutral-800">Imagen</mat-label>
+            <input matInput 
+            placeholder="inserte imagen url..." 
+            value="pictureItem.image"
+            name="imagen"
+            [(ngModel)]="pictureItem.image"
+            class="py-2 px-3 text-gray-200 mt-1 bg-neutral-500 border-none focus:outline-none">
+        </mat-form-field>
+    </div>
+
+    <div>
+        <button mat-raised-button color="primary" type="submit">
+            Actualizar
+        </button>
+    </div>
+</form>

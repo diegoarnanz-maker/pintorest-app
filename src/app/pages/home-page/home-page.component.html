@@ -1,0 +1,18 @@
+<div class="pb-5 min-h-[100px]">
+    <div class="flex justify-center flex-wrap gap-5">
+        @for (picture of pictures; track $index) {
+            <app-picture-card [picture]="picture"/>
+        }
+        @empty {
+            <div>
+                <p>No hay fotos</p> 
+            </div>
+        }
+    </div>
+
+    <div class="fixed bottom-10 right-10">
+        <button (click)="handleopenCreatePictureForm()" mat-fab color="primary">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+</div>
